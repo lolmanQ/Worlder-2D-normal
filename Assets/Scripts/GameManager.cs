@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		main = this;
+		Time.timeScale = 1;
 	}
 
 	// Update is called once per frame
@@ -66,12 +68,26 @@ public class GameManager : MonoBehaviour
 
 	public void RestartLevel()
 	{
-
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
 	public void NextLevel()
 	{
+		Debug.Log(SceneManager.GetActiveScene().buildIndex);
+		Debug.Log(SceneManager.sceneCountInBuildSettings);
+		if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		}
+		else
+		{
+			SceneManager.LoadScene(0);
+		}
+	}
 
+	public void GoToMenu()
+	{
+		SceneManager.LoadScene(0);
 	}
 
 	public void Death()
