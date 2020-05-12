@@ -6,6 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+	//Ska igentligen använda sig av en metod
+	/// <summary>
+	/// public static GameManager main;
+	/// 
+	/// ska vara
+	/// 
+	/// [SerializeField]
+	/// private static GameManager main;
+	/// public static GameManager Main { get => main; set => main = value; };
+	/// </summary>
 	public static GameManager main;
 	float finalTime = 0;
 	Timer timer = new Timer();

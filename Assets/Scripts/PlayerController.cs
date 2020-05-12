@@ -15,6 +15,14 @@ public class PlayerController : MonoBehaviour
 	bool isRuning, dashIsReady, facingRight = true, hasControl = true, physicsActive = true, isGlide;
 	float dashTimer;
 
+	/// <summary>
+	/// istället för att det ska stå
+	/// public Transform respawnPoint;
+	/// ska det stå
+	/// [SerializeField]
+	/// private Transform respawnPoint;
+	/// </summary>
+
 	[SerializeField]
 	private Transform respawnPoint;
 

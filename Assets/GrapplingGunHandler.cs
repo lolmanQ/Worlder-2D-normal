@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class GrapplingGunHandler : MonoBehaviour
 {
-	public Transform lineSpawnPos;
-	public GameObject grapplePoint;
-	public Transform firePoint;
-	public GameObject gun;
-	public SwingHandler swingHandler;
-	public GameObject showPoint;
+	[SerializeField]
+	private Transform lineSpawnPos;
+	[SerializeField]
+	private GameObject grapplePoint;
+	[SerializeField]
+	private Transform firePoint;
+	[SerializeField]
+	private GameObject gun;
+	[SerializeField]
+	private SwingHandler swingHandler;
+	[SerializeField]
+	private GameObject showPoint;
 	LineRenderer lineRenderer;
 	GameObject player;
 	Rigidbody playerRB;
 	Vector3 hitPosition;
+	//Sättet jag skriver så ignorerar jag att skriva private innan private variabler, men jag vet att dem blir private
 
 	float Angle { get => gun.transform.eulerAngles.z; set => gun.transform.eulerAngles = new Vector3(0, 0, value); }
 	Vector3 mousePos;
