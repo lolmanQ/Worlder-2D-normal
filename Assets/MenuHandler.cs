@@ -22,6 +22,11 @@ public class MenuHandler : MonoBehaviour
 		
 	}
 
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
+
 	public void StartPress()
 	{
 		SceneManager.LoadScene(1);
