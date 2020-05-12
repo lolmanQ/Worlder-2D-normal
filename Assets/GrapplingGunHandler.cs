@@ -44,7 +44,7 @@ public class GrapplingGunHandler : MonoBehaviour
 		{
 			grapplePoint.transform.position = firePoint.position;
 			Ray showRay = new Ray(firePoint.position, mousePos);
-			if (Physics.Raycast(showRay, out RaycastHit showHitInfo, 12))
+			if (Physics.Raycast(showRay, out RaycastHit showHitInfo, 18))
 			{
 				if (showHitInfo.transform.CompareTag("Ground"))
 				{
@@ -54,9 +54,9 @@ public class GrapplingGunHandler : MonoBehaviour
 			}
 		}
 
-		if(isFired && hooked && Input.GetKey(KeyCode.C))
+		if(isFired && hooked && Input.GetMouseButton(0))
 		{
-			swingHandler.ropeLength -= 10f * Time.deltaTime;
+			swingHandler.ropeLength -= 2f * Time.deltaTime;
 		}
 
 		
@@ -67,7 +67,7 @@ public class GrapplingGunHandler : MonoBehaviour
 
 			
 			Ray ray = new Ray(firePoint.position, mousePos);
-			if(Physics.Raycast(ray, out RaycastHit hitInfo, 12))
+			if(Physics.Raycast(ray, out RaycastHit hitInfo, 18))
 			{
 				if(hitInfo.transform.CompareTag("Ground"))
 				{

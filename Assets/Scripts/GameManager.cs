@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 	void Update()
 	{
 		timer.Update(Time.deltaTime);
-		currentTimeText.SetText(timer.Time + "");
+		currentTimeText.SetText(Mathf.Round(timer.Time*10)/10 + "");
 		if (Input.anyKeyDown && !runActive)
 		{
 			StartRun();
